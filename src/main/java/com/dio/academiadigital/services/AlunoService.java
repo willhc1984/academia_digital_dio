@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dio.academiadigital.entities.Aluno;
+import com.dio.academiadigital.entities.form.AlunoForm;
 import com.dio.academiadigital.repositories.AlunoRepository;
 
 @Service
@@ -25,7 +26,12 @@ public class AlunoService {
 		return aluno.get();
 	}
 	
-	public Aluno save(Aluno aluno) {
+	public Aluno create(AlunoForm form) {
+		Aluno aluno = new Aluno();
+		aluno.setNome(form.getNome());
+		aluno.setCpf(form.getCpf());
+		aluno.setBairro(form.getBairro());
+		aluno.setDataDeNascimento(form.getDataDeNasciemnto());
 		return repository.save(aluno);
 	}
 	

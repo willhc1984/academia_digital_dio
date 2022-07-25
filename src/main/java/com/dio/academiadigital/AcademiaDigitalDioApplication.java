@@ -84,7 +84,6 @@ public class AcademiaDigitalDioApplication implements CommandLineRunner{
 		
 		avaliacaoFisicaRepository.saveAll(Arrays.asList(av1, av2, av3));
 		
-		
 	}
 
 }
