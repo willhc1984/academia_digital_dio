@@ -36,7 +36,6 @@ public class Aluno {
 	private String bairro;
 	private LocalDate dataDeNascimento;
 	
-	
 	@OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JsonIgnore
 	private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();

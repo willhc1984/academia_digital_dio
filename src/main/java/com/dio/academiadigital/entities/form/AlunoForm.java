@@ -33,6 +33,6 @@ public class AlunoForm {
 	
 	@NotNull(message = "Preencha o campo corretamente.")
 	@Past(message = "Data '${validatedValue}' é inválida.")
-	private LocalDate dataDeNasciemnto;
+	private LocalDate dataDeNascimento;
 
 }

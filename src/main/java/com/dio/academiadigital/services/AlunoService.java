@@ -31,7 +31,7 @@ public class AlunoService {
 		aluno.setNome(form.getNome());
 		aluno.setCpf(form.getCpf());
 		aluno.setBairro(form.getBairro());
-		aluno.setDataDeNascimento(form.getDataDeNasciemnto());
+		aluno.setDataDeNascimento(form.getDataDeNascimento());
 		return repository.save(aluno);
 	}
 	
