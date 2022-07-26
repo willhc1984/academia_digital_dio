@@ -26,11 +26,11 @@ public class AvaliacaoFisica {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private LocalDateTime dataDaAvaliacao;
+	private LocalDateTime dataDaAvaliacao = LocalDateTime.now();
 	private Double peso;
 	private Double altura;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "aluno_id")
 	private Aluno aluno;
 

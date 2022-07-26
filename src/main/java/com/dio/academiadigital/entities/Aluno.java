@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_aluno")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Aluno {
 	
 	@Id
@@ -36,7 +38,7 @@ public class Aluno {
 	private String bairro;
 	private LocalDate dataDeNascimento;
 	
-	@OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
 	@JsonIgnore
 	private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 	
