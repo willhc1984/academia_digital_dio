@@ -27,8 +27,8 @@ public class Matricula {
 	private Long id;
 	private LocalDateTime dataDaMatricula = LocalDateTime.now();
 	
-	@OneToOne(cascade = CascadeType.ALL, optional = true, orphanRemoval = true)
-	@JoinColumn(name = "aluno_id")
+	@OneToOne
+	@JoinColumn(name = "aluno_id", unique = true)
 	private Aluno aluno;
 
 }

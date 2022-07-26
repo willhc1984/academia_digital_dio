@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -38,6 +39,10 @@ public class Aluno {
 	private String cpf;
 	private String bairro;
 	private LocalDate dataDeNascimento;
+	
+	@JsonIgnore
+	@OneToOne(mappedBy = "aluno", cascade = CascadeType.REMOVE)
+	private Matricula matricula;
 	
 	@OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
 	@JsonIgnore
