@@ -10,5 +10,15 @@ public class HomeController {
 	public String home() {
 		return "/home";
 	}
+	
+	@GetMapping("/cadAluno")
+	public String cadAluno() {
+		return "/cad-alunos";
+	}
+	
+	@GetMapping("/listAluno")
+	public String listAluno() {
+		return "/lista-alunos";
+	}
 
 }

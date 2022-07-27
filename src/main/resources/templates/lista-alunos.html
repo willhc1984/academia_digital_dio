@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<title>Desafio DIO - Academia Digital</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" href="/image/favicon.png" />
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
+	rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<header th:replace="header :: cabecalho">
+		<div>Header</div>
+	</header>
+
+	<div class="container" style="padding: 50px">
+
+		<table class="table table-sm">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">CPF</th>
+					<th scope="col">Bairro</th>
+					<th scope="col">Data de Nascimento</th>
+					<th scope="col">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+					<td>@mdo</td>
+					<td><a class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
+						class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-magnifying-glass" title="Visualizar"
+							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
+						role="button"><span class="oi oi-circle-x" title="Deletar"
+							aria-hidden="true"></span></a></td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+					<td>@mdo</td>
+					<td><a class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
+						class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-magnifying-glass" title="Visualizar"
+							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
+						role="button"><span class="oi oi-circle-x" title="Deletar"
+							aria-hidden="true"></span></a></td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td colspan="2">Larry the Bird</td>
+					<td>@twitter</td>
+					<td>@mdo</td>
+					<td><a class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
+						class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-magnifying-glass" title="Visualizar"
+							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
+						role="button"><span class="oi oi-circle-x" title="Deletar"
+							aria-hidden="true"></span></a></td>
+				</tr>
+				<tr>
+					<th scope="row">4</th>
+					<td colspan="2">Larry the Bird</td>
+					<td>@twitter</td>
+					<td>@mdo</td>
+					<td><a class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
+						class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-magnifying-glass" title="Visualizar"
+							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
+						role="button"><span class="oi oi-circle-x" title="Deletar"
+							aria-hidden="true"></span></a></td>
+				</tr>
+				<tr>
+					<th scope="row">5</th>
+					<td colspan="2">Larry the Bird</td>
+					<td>@twitter</td>
+					<td>@mdo</td>
+					<td><a class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
+						class="btn btn-info btn-sm" href="" role="button"><span
+							class="oi oi-magnifying-glass" title="Visualizar"
+							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
+						role="button"><span class="oi oi-circle-x" title="Deletar"
+							aria-hidden="true"></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+
+
+	<footer th:replace="footer :: rodape">
+		<div>Footer</div>
+	</footer>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+
+	</script>
+
+</body>
+
+</html>
