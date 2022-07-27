@@ -13,12 +13,32 @@ public class HomeController {
 	
 	@GetMapping("/cadAluno")
 	public String cadAluno() {
-		return "/cad-alunos";
+		return "/cad-aluno";
 	}
 	
-	@GetMapping("/listAluno")
-	public String listAluno() {
-		return "/lista-alunos";
+	@GetMapping("/listaAluno")
+	public String listaAluno() {
+		return "/lista-aluno";
+	}
+	
+	@GetMapping("/cadMatricula")
+	public String cadMatricula() {
+		return "/cad-matricula";
+	}
+	
+	@GetMapping("/listaMatricula")
+	public String listaMatricula() {
+		return "/lista-matricula";
+	}
+	
+	@GetMapping("/cadAvaliacao")
+	public String cadAvaliacao() {
+		return "/cad-avaliacao";
+	}
+	
+	@GetMapping("/listaAvaliacao")
+	public String listaAvaliacao() {
+		return "/lista-avaliacao";
 	}
 
 }

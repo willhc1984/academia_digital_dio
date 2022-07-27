@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<title>Desafio DIO - Academia Digital</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" href="/image/favicon.png" />
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
+	rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<header th:replace="header :: cabecalho">
+		<div>Header</div>
+	</header>
+
+	<div class="container" style="padding: 50px;">
+	
+	<h2>Matricular aluno</h2>
+
+		<form>
+			<div class="form-group">
+				<label for="formGroupExampleInput">Nome do Aluno:</label> <input type="text"
+					class="form-control" id="formGroupExampleInput"
+					placeholder="nome completo do aluno">
+			</div>			
+			<div class="form-group">
+				<label for="formGroupExampleInput2">Data:</label> <input
+					type="date" class="form-control" id="formGroupExampleInput2"
+					placeholder="Data de nascimento do aluno">
+			</div>
+			<button class="btn btn-primary" type="submit">Salvar</button>
+		</form>
+
+	</div>
+
+
+	<footer th:replace="footer :: rodape">
+		<div>Footer</div>
+	</footer>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+
+	</script>
+
+</body>
+
+</html>
