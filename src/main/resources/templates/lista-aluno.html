@@ -40,12 +40,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th>1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
+				<tr th:each="a : ${alunos}">
+					<td th:text="${a.id}"></td>
+					<td th:text="${a.nome}"></td>
+					<td th:text="${a.cpf}"></td>
+					<td th:text="${a.bairro}"></td>
+					<td th:text="${a.dataDeNascimento}"></td>
 					<td><a class="btn btn-info btn-sm" href="" role="button"><span
 							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
 						class="btn btn-info btn-sm" href="" role="button"><span
@@ -54,59 +54,7 @@
 						role="button"><span class="oi oi-circle-x" title="Deletar"
 							aria-hidden="true"></span></a></td>
 				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-					<td>@mdo</td>
-					<td><a class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
-						class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-magnifying-glass" title="Visualizar"
-							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
-						role="button"><span class="oi oi-circle-x" title="Deletar"
-							aria-hidden="true"></span></a></td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td colspan="2">Larry the Bird</td>
-					<td>@twitter</td>
-					<td>@mdo</td>
-					<td><a class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
-						class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-magnifying-glass" title="Visualizar"
-							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
-						role="button"><span class="oi oi-circle-x" title="Deletar"
-							aria-hidden="true"></span></a></td>
-				</tr>
-				<tr>
-					<th scope="row">4</th>
-					<td colspan="2">Larry the Bird</td>
-					<td>@twitter</td>
-					<td>@mdo</td>
-					<td><a class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
-						class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-magnifying-glass" title="Visualizar"
-							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
-						role="button"><span class="oi oi-circle-x" title="Deletar"
-							aria-hidden="true"></span></a></td>
-				</tr>
-				<tr>
-					<th scope="row">5</th>
-					<td colspan="2">Larry the Bird</td>
-					<td>@twitter</td>
-					<td>@mdo</td>
-					<td><a class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
-						class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-magnifying-glass" title="Visualizar"
-							aria-hidden="true"></span></a> <a class="btn btn-info btn-sm" href=""
-						role="button"><span class="oi oi-circle-x" title="Deletar"
-							aria-hidden="true"></span></a></td>
-				</tr>
+				
 			</tbody>
 		</table>
 

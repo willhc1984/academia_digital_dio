@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,6 +32,7 @@ public class AlunoForm {
 	@Size(min = 3, max = 50, message = "'${validatedValue}' precisa estar entre {min} e {max} caracteres.")
 	private String bairro;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "Preencha o campo corretamente.")
 	@Past(message = "Data '${validatedValue}' é inválida.")
 	private LocalDate dataDeNascimento;
