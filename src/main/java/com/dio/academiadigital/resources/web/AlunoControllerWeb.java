@@ -40,11 +40,15 @@ public class AlunoControllerWeb {
 
 		if (result.hasErrors()) { return "/cad-aluno"; }		 
 		
-		System.out.println(form);
+		try {
+			service.create(form);
+			attr.addFlashAttribute("success", "Aluno cadastrado com sucesso!");
+			return "redirect:/web/alunos/cadastro";
+		} catch (Exception e) {
+			attr.addFlashAttribute("fail", "Erro: Violação de chave.");
+			return "redirect:/web/alunos/cadastro";
+		}	
 		
-		service.create(form);
-		attr.addFlashAttribute("success", "Aluno cadastrado com sucesso!");
-		return "redirect:/web/alunos/cadastro";
 	}
 
 }
