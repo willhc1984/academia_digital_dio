@@ -26,7 +26,7 @@ public class AlunoService {
 		return aluno.get();
 	}
 	
-	public Aluno create(AlunoForm form) throws RuntimeException{
+	public Aluno create(AlunoForm form){
 		Aluno aluno = new Aluno();
 		aluno.setNome(form.getNome());
 		aluno.setCpf(form.getCpf());
