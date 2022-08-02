@@ -20,8 +20,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AlunoForm {
 	
-	private Long id;
-	
 	@NotEmpty(message = "Preencha o campo corretamente.")
 	@Size(min = 3, max = 50, message = "'${validatedValue}' precisa estar entre {min} e {max} caracteres.")
 	private String nome;

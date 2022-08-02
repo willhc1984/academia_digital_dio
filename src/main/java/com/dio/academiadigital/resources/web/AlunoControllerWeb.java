@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,8 +37,10 @@ public class AlunoControllerWeb {
 
 	@PostMapping
 	public String create(@Valid AlunoForm form, BindingResult result, RedirectAttributes attr) {
-
-		if (result.hasErrors()) { return "/cad-aluno"; }		 
+		
+		if (result.hasErrors()) { 
+			return "/cad-aluno"; 
+		}		 
 		
 		try {
 			service.create(form);
@@ -68,9 +71,14 @@ public class AlunoControllerWeb {
 	}
 	
 	@PostMapping(value = "/update/{id}")
-	public String update(@Valid AlunoForm form, @PathVariable Long id, Aluno aluno, BindingResult result, RedirectAttributes attr) {
+	public String update(@Valid AlunoForm alunoForm, BindingResult result, ModelMap model, @PathVariable Long id, Aluno aluno, RedirectAttributes attr) {
 		
-		if(result.hasErrors()) { return "/atualizar-aluno";	}
+		
+		if (result.hasErrors()) { 
+			model.addAttribute("alunoForm", service.getById(id)); 
+			attr.addFlashAttribute("fail", "Erro: Preencha os dados corretamente.");
+			return "redirect:/web/alunos/update/{id}"; 
+		}
 		
 		try {
 			service.update(id, aluno);
@@ -82,6 +90,4 @@ public class AlunoControllerWeb {
 		}
 		
 	}
-	
-
 }
