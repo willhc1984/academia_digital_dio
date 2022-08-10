@@ -37,11 +37,9 @@ public class AlunoControllerWeb {
 
 	@PostMapping
 	public String create(@Valid AlunoForm form, BindingResult result, RedirectAttributes attr) {
-		
 		if (result.hasErrors()) { 
 			return "/cad-aluno"; 
 		}		 
-		
 		try {
 			service.create(form);
 			attr.addFlashAttribute("success", "Aluno cadastrado com sucesso!");
@@ -72,7 +70,6 @@ public class AlunoControllerWeb {
 	
 	@PostMapping(value = "/update/{id}")
 	public String update(@Valid AlunoForm alunoForm, BindingResult result, ModelMap model, @PathVariable Long id, Aluno aluno, RedirectAttributes attr) {
-		
 		
 		if (result.hasErrors()) { 
 			model.addAttribute("alunoForm", service.getById(id)); 

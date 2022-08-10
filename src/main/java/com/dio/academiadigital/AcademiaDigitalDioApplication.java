@@ -16,6 +16,10 @@ import com.dio.academiadigital.repositories.AlunoRepository;
 import com.dio.academiadigital.repositories.AvaliacaoFisicaRepository;
 import com.dio.academiadigital.repositories.MatriculaRepository;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @SpringBootApplication
 public class AcademiaDigitalDioApplication implements CommandLineRunner{
 	

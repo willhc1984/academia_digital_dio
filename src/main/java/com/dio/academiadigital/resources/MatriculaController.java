@@ -33,7 +33,7 @@ public class MatriculaController {
 	
 	@GetMapping(value = "/{id}")
 	public Matricula getById(@PathVariable Long id) {
-		Matricula matricula = service.getBydId(id);
+		Matricula matricula = service.getById(id);
 		return matricula;
 	}
 	

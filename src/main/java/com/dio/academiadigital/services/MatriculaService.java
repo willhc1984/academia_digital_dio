@@ -28,7 +28,7 @@ public class MatriculaService {
 		return matriculas;
 	}
 	
-	public Matricula getBydId(Long id) {
+	public Matricula getById(Long id) {
 		Optional<Matricula> matricula = matriculaRepository.findById(id);
 		return matricula.get();
 	}

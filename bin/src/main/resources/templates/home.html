@@ -23,27 +23,14 @@
 		<div>Header</div>
 	</header>
 
-	<div class="container" style="padding: 50px;">
+	<div class="container">
 
-		<h2>Matricular aluno</h2>
-
-		<form th:action="@{/web/matriculas}" method="POST">
-			<div class="form-group">
-			<label for="aluno">Selecione o Aluno:</label>
-				<select id="aluno" class="form-control">
-					<option value="">Selecione...</option>
-					<option th:each="aluno : ${alunos}" th:value="${aluno.getId()}" th:text="${aluno.getNome()}"></option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="formGroupExampleInput2">Data:</label> <input type="date" class="form-control"
-					id="formGroupExampleInput2" placeholder="Data de nascimento do aluno">
-			</div>
-			<button class="btn btn-primary" type="submit">Salvar</button>
-		</form>
-
+		<div style="text-align: center; padding: 30px;"><h1>Desafio DIO - Academia Digital</h1></div>
+		<img src="logo-inicio.png" alt="Logo DIO" class="img-fluid rounded" style="padding : 60px" />
+		
 	</div>
 
+	</div>
 
 	<footer th:replace="footer :: rodape">
 		<div>Footer</div>
@@ -57,6 +44,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
+
+	</script>
 
 </body>
 
