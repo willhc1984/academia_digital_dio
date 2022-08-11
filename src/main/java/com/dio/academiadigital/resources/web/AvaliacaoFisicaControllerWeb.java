@@ -31,7 +31,7 @@ public class AvaliacaoFisicaControllerWeb {
 
 	@GetMapping
 	public String getAll(ModelMap model) {
-		model.addAttribute("avaliacaoFisica", avaliacaoFisicaService.getAll());
+		model.addAttribute("avaliacoes", avaliacaoFisicaService.getAll());
 		//model.addAttribute("alunos", alunoService.getAll());
 		return "/lista-avaliacao";
 	}

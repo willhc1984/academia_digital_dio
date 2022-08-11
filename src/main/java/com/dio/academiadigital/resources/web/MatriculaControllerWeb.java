@@ -42,9 +42,10 @@ public class MatriculaControllerWeb {
 	}
 
 	@PostMapping
-	public String create(@Valid MatriculaForm form, BindingResult result, RedirectAttributes attr) {
+	public String create(@Valid MatriculaForm form,  BindingResult result, RedirectAttributes attr, ModelMap model) {
 		if (result.hasErrors()) { 
 			System.out.println(form);
+			model.addAttribute("alunos", alunoService.getAll());
 			return "/cad-matricula"; 
 		}		 
 		try {
