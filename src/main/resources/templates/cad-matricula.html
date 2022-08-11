@@ -27,18 +27,30 @@
 
 		<h2>Matricular aluno</h2>
 
-		<form th:action="@{/web/matriculas}" method="POST">
+		<div th:replace="alert"></div>
+
+		<form th:action="@{/web/matriculas}" th:object="${matriculaForm}" method="POST">
 			<div class="form-group">
-			<label for="aluno">Selecione o Aluno:</label>
-				<select id="aluno" class="form-control">
+				<label for="aluno">Selecione o Aluno:</label>
+				<select id="aluno" class="form-control" th:field="*{alunoId}"
+					th:classappend="${#fields.hasErrors('alunoId')} ? 'is-invalid'">
 					<option value="">Selecione...</option>
-					<option th:each="aluno : ${alunos}" th:value="${aluno.getId()}" th:text="${aluno.getNome()}"></option>
+					<option th:each="aluno : ${alunos}" th:value="${aluno.getId()}" th:text="${aluno.getNome()}" />
+					</option>
 				</select>
+				<div class="invalid-feedback">
+					<span th:errors="*{alunoId}"></span>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="formGroupExampleInput2">Data:</label> <input type="date" class="form-control"
-					id="formGroupExampleInput2" placeholder="Data de nascimento do aluno">
+					id="formGroupExampleInput2" th:field="*{dataDaMatricula}"
+					th:classappend="${#fields.hasErrors('dataDaMatricula')} ? 'is-invalid'" />
+				<div class="invalid-feedback">
+					<span th:errors="*{dataDaMatricula}"></span>
+				</div>
 			</div>
+
 			<button class="btn btn-primary" type="submit">Salvar</button>
 		</form>
 

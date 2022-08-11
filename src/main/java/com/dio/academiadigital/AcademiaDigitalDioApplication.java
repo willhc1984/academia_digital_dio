@@ -1,5 +1,6 @@
 package com.dio.academiadigital;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -57,10 +58,12 @@ public class AcademiaDigitalDioApplication implements CommandLineRunner{
 		
 		Matricula matricula1 = new Matricula();
 		matricula1.setId(1L);
+		matricula1.setDataDaMatricula(LocalDate.now());
 		matricula1.setAluno(aluno1);
 		
 		Matricula matricula2 = new Matricula();
 		matricula2.setId(2L);
+		matricula2.setDataDaMatricula(LocalDate.now());
 		matricula2.setAluno(aluno2);
 		
 		matriculaRepository.saveAll(Arrays.asList(matricula1, matricula2));

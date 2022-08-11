@@ -27,11 +27,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 	
 	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-	    http.csrf().disable()
-	        .authorizeRequests()
-	            .antMatchers(HttpMethod.GET, "/alunos/*")
-	            .permitAll() ;
-	}
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
+                .authorizeRequests().antMatchers("/console/**").permitAll();
+        httpSecurity.csrf().disable();
+        httpSecurity.headers().frameOptions().disable();
+    }
 
 }

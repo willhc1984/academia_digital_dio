@@ -1,7 +1,12 @@
 package com.dio.academiadigital.entities.form;
 
+import java.time.LocalDate;
+
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Positive;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,6 +20,11 @@ public class MatriculaForm {
 	@NotNull(message = "Preencha o campo corretamente.")
 	@Positive(message = "O Id do aluno precisa ser positivo.")
 	private Long alunoId;
+	
+	@NotNull(message = "Preencha o campo corretamente.")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@PastOrPresent(message = "Data invalida")
+	private LocalDate dataDaMatricula;
 	
 
 }

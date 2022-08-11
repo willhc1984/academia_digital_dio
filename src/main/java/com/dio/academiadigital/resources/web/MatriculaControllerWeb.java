@@ -3,6 +3,7 @@ package com.dio.academiadigital.resources.web;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -42,14 +43,16 @@ public class MatriculaControllerWeb {
 	@PostMapping
 	public String create(@Valid MatriculaForm form, BindingResult result, RedirectAttributes attr) {
 		if (result.hasErrors()) { 
+			System.out.println(form);
 			return "/cad-matricula"; 
 		}		 
 		try {
 			matriculaService.create(form);
 			attr.addFlashAttribute("success", "Matricula cadastrado com sucesso!");
 			return "redirect:/web/matriculas/cadastro";
-		} catch (Exception e) {
-			attr.addFlashAttribute("fail", "Erro: Violação de chave.");
+		} catch (DataIntegrityViolationException e) {
+			e.printStackTrace();
+			attr.addFlashAttribute("fail", "Aluno já matriculado!");
 			return "redirect:/web/matriculas/cadastro";
 		}			
 	}

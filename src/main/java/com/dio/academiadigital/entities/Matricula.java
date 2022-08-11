@@ -1,8 +1,7 @@
 package com.dio.academiadigital.entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,8 @@ public class Matricula {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private LocalDateTime dataDaMatricula = LocalDateTime.now();
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dataDaMatricula;
 	
 	@OneToOne
 	@JoinColumn(name = "aluno_id", unique = true)

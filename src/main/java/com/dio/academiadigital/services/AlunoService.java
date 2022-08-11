@@ -32,14 +32,8 @@ public class AlunoService {
 		aluno.setCpf(form.getCpf());
 		aluno.setBairro(form.getBairro());
 		aluno.setDataDeNascimento(form.getDataDeNascimento());
-		try {
-			repository.save(aluno);
-		} catch (Exception e) {
-			e.printStackTrace();
-			e.getMessage();
-		}
-		return aluno;
-		
+		repository.save(aluno);
+		return aluno;		
 	}
 	
 	public void delete(Long id) {

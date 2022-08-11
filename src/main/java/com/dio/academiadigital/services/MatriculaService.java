@@ -35,6 +35,7 @@ public class MatriculaService {
 	
 	public Matricula create(MatriculaForm form){
 		Matricula matricula = new Matricula();
+		matricula.setDataDaMatricula(form.getDataDaMatricula());
 		Aluno aluno = alunoRepository.findById(form.getAlunoId()).get();		
 		matricula.setAluno(aluno);
 		
