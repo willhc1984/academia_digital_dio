@@ -48,10 +48,9 @@ public class MatriculaControllerWeb {
 		}		 
 		try {
 			matriculaService.create(form);
-			attr.addFlashAttribute("success", "Matricula cadastrado com sucesso!");
+			attr.addFlashAttribute("success", "Aluno matriculado!");
 			return "redirect:/web/matriculas/cadastro";
 		} catch (DataIntegrityViolationException e) {
-			e.printStackTrace();
 			attr.addFlashAttribute("fail", "Aluno já matriculado!");
 			return "redirect:/web/matriculas/cadastro";
 		}			
@@ -61,7 +60,7 @@ public class MatriculaControllerWeb {
 	public String delete(@PathVariable("id") Long id, RedirectAttributes attr) {
 		try {
 			matriculaService.delete(id);
-			attr.addFlashAttribute("success", "Matricula excluido com sucesso!");
+			attr.addFlashAttribute("success", "Matricula excluida com sucesso!");
 			return "redirect:/web/matriculas";
 		} catch (Exception e) {
 			attr.addFlashAttribute("fail", "Erro: Violação de chave.");
