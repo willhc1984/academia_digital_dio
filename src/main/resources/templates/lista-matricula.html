@@ -30,6 +30,7 @@
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Data</th>
+					<th scope="col">Aluno</th>
 					<th scope="col">Ações</th>
 				</tr>
 			</thead>
@@ -37,6 +38,7 @@
 				<tr th:each="a : ${matriculas}">
 					<td th:text="${a.id}"></td>
 					<td th:text="${a.dataDaMatricula}"></td>
+					<td th:text="${a.aluno.nome}"></td>
 					<td><a class="btn btn-info btn-sm" th:href="@{/web/matriculas/update/{id} (id=${a.id}) }"
 							role="button"><span class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
 							class="btn btn-info btn-sm" href="" role="button"><span class="oi oi-magnifying-glass"

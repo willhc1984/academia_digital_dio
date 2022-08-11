@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +24,9 @@ public class AlunoForm {
 	private String nome;
 	
 	@NotEmpty(message = "Preencha o campo corretamente.")
-	@CPF(message = "'${validatedValue}' é inválido!")
+	/* @CPF(message = "'${validatedValue}' é inválido!") */
+	
+	@Pattern(regexp="[\\d]{11}", message = "Formato invalido! Somente 11 digitos numéricos.")
 	private String cpf;
 	
 	@NotEmpty(message = "Preencha o campo corretamente.")

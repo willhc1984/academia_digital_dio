@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 public class AvaliacaoFisicaForm {
 
 	@Positive(message = "O Id do aluno precisa ser positivo.")
+	@NotNull(message = "Preencha o campo corretamente.")
 	private Long alunoId;
 
 	@NotNull(message = "Preencha o campo corretamente.")
