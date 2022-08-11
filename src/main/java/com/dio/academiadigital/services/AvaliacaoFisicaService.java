@@ -37,7 +37,7 @@ public class AvaliacaoFisicaService {
 		
 		avaliacaoFisica.setAluno(aluno);
 		avaliacaoFisica.setAltura(form.getPeso());
-		avaliacaoFisica.setPeso(form.getPeso());
+		avaliacaoFisica.setPeso(form.getAltura());
 		
 		return avaliacaoFisicaRepository.save(avaliacaoFisica);
 	}

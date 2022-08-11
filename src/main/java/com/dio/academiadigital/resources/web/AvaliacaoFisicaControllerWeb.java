@@ -64,10 +64,10 @@ public class AvaliacaoFisicaControllerWeb {
 		try {
 			avaliacaoFisicaService.delete(id);
 			attr.addFlashAttribute("success", "Avaliação física excluida!");
-			return "redirect:/web/avaliacaoFisica";
+			return "redirect:/web/avaliacoes";
 		} catch (Exception e) {
 			attr.addFlashAttribute("fail", "Erro: Violação de chave.");
-			return "redirect:/web/avaliacaoFisica/";
+			return "redirect:/web/avaliacoes";
 		}
 	}
 	
