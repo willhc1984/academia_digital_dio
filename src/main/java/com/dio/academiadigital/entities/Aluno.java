@@ -47,7 +47,7 @@ public class Aluno {
 	@OneToOne(mappedBy = "aluno", cascade = CascadeType.REMOVE)
 	private Matricula matricula;
 	
-	@OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JsonIgnore
 	private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 	

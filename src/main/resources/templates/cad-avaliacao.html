@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="formGroupExampleInput2">Peso em quilogramas(kg):</label> <input type="text"
+				<label for="formGroupExampleInput2">Peso em quilogramas(kg):</label> <input type="number"
 					class="form-control" id="formGroupExampleInput2" th:field="*{peso}"
 					placeholder="peso do aluno em quilogramas"
 					th:classappend="${#fields.hasErrors('peso')} ? 'is-invalid'">
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="formGroupExampleInput3">Altura do aluno em centimetros:</label> <input type="text" class="form-control"
+				<label for="formGroupExampleInput3">Altura do aluno em centimetros:</label> <input type="number" class="form-control"
 					id="formGroupExampleInput3" th:field="*{altura}" placeholder="altura do aluno em centimetros"
 					th:classappend="${#fields.hasErrors('altura')} ? 'is-invalid'">
 				<div class="invalid-feedback">

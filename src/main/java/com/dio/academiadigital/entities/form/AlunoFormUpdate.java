@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AlunoForm {
+public class AlunoFormUpdate {
 	
 	private Long id;
 	

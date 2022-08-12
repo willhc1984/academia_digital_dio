@@ -1,8 +1,11 @@
 package com.dio.academiadigital.entities.form;
 
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+
+import org.springframework.format.annotation.NumberFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +19,7 @@ public class AvaliacaoFisicaForm {
 	@Positive(message = "O Id do aluno precisa ser positivo.")
 	@NotNull(message = "Preencha o campo corretamente.")
 	private Long alunoId;
-
+	
 	@NotNull(message = "Preencha o campo corretamente.")
 	@Positive(message = "${validatedValue}' precisa ser positivo.")
 	private Double peso;

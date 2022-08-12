@@ -3,10 +3,10 @@ package com.dio.academiadigital.resources.web;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,8 +56,9 @@ public class AlunoControllerWeb {
 			service.delete(id);
 			attr.addFlashAttribute("success", "Aluno excluido com sucesso!");
 			return "redirect:/web/alunos";
-		} catch (Exception e) {
-			attr.addFlashAttribute("fail", "Erro: Violação de chave.");
+		} catch (DataIntegrityViolationException e) {
+			e.printStackTrace();
+			attr.addFlashAttribute("fail", "Erro: Aluno possui avaliações registradas!");
 			return "redirect:/web/alunos/";
 		}
 	}
@@ -69,12 +70,10 @@ public class AlunoControllerWeb {
 	}
 	
 	@PostMapping(value = "/update/{id}")
-	public String update(@Valid AlunoForm alunoForm, BindingResult result, ModelMap model, @PathVariable Long id, Aluno aluno, RedirectAttributes attr) {
+	public String update(@Valid AlunoForm alunoForm, BindingResult result, @PathVariable Long id, Aluno aluno, RedirectAttributes attr, ModelMap model) {
 		
 		if (result.hasErrors()) { 
-			model.addAttribute("alunoForm", service.getById(id)); 
-			attr.addFlashAttribute("fail", "Erro: Preencha os dados corretamente.");
-			return "redirect:/web/alunos/update/{id}"; 
+			return "/atualizar-aluno"; 
 		}
 		
 		try {
