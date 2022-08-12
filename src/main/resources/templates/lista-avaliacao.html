@@ -23,8 +23,9 @@
 		<div>Header</div>
 	</header>
 
-	<div class="container" style="padding: 50px">
 
+	<div class="container" style="padding: 50px">
+		<h2>Avaliações fisicas registradas:</h2>
 		<table class="table table-sm">
 			<thead>
 				<tr>
@@ -43,20 +44,18 @@
 					<td th:text="${a.dataDaAvaliacao}"></td>
 					<td th:text="${a.peso}"></td>
 					<td th:text="${a.altura}"></td>
-					<td><a class="btn btn-info btn-sm" th:href="@{/web/avaliacoes/update/{id} (id=${a.id}) }"
-							role="button"><span class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
-							class="btn btn-info btn-sm" href="" role="button"><span class="oi oi-magnifying-glass"
-								title="Visualizar" aria-hidden="true"></span></a>
+					<td>
 						<button th:id="${#strings.concat('btn_web/avaliacoes/delete/', a.id) }" type="button"
 							class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
 							<span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
 						</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
 
 	</div>
-	
+
 	<div th:replace="modal :: modal"></div>
 
 	<footer th:replace="footer :: rodape">
