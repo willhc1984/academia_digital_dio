@@ -32,13 +32,13 @@ public class MatriculaControllerWeb {
 	public String getAll(ModelMap model) {
 		model.addAttribute("matriculas", matriculaService.getAll());
 		model.addAttribute("alunos", alunoService.getAll());
-		return "/lista-matricula";
+		return "lista-matricula";
 	}
 
 	@GetMapping(value = "/cadastro")
 	public String save(MatriculaForm matriculaForm, ModelMap model) {
 		model.addAttribute("alunos", alunoService.getAll());
-		return "/cad-matricula";
+		return "cad-matricula";
 	}
 
 	@PostMapping
@@ -46,7 +46,7 @@ public class MatriculaControllerWeb {
 		if (result.hasErrors()) { 
 			System.out.println(form);
 			model.addAttribute("alunos", alunoService.getAll());
-			return "/cad-matricula"; 
+			return "cad-matricula"; 
 		}		 
 		try {
 			matriculaService.create(form);
@@ -73,7 +73,7 @@ public class MatriculaControllerWeb {
 	@GetMapping(value = "/update/{id}")
 	public String update(@PathVariable Long id, ModelMap model) {
 		model.addAttribute("matriculaForm", matriculaService.getById(id)); 
-		return "/atualizar-matricula";
+		return "atualizar-matricula";
 	}
 	
 	@PostMapping(value = "/update/{id}")

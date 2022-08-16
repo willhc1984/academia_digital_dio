@@ -33,13 +33,13 @@ public class AvaliacaoFisicaControllerWeb {
 	public String getAll(ModelMap model) {
 		model.addAttribute("avaliacoes", avaliacaoFisicaService.getAll());
 		//model.addAttribute("alunos", alunoService.getAll());
-		return "/lista-avaliacao";
+		return "lista-avaliacao";
 	}
 
 	@GetMapping(value = "/cadastro")
 	public String save(AvaliacaoFisicaForm form, ModelMap model) {
 		model.addAttribute("alunos", alunoService.getAll());
-		return "/cad-avaliacao";
+		return "cad-avaliacao";
 	}
 
 	@PostMapping
@@ -47,7 +47,7 @@ public class AvaliacaoFisicaControllerWeb {
 		if (result.hasErrors()) { 
 			model.addAttribute("alunos", alunoService.getAll());
 			System.out.println(form);
-			return "/cad-avaliacao"; 
+			return "cad-avaliacao"; 
 		}		 
 		try {
 			avaliacaoFisicaService.create(form);
@@ -74,7 +74,7 @@ public class AvaliacaoFisicaControllerWeb {
 	@GetMapping(value = "/update/{id}")
 	public String update(@PathVariable Long id, ModelMap model) {
 		model.addAttribute("matriculaForm", avaliacaoFisicaService.getById(id)); 
-		return "/atualizar-matricula";
+		return "atualizar-matricula";
 	}
 	
 	@PostMapping(value = "/update/{id}")
@@ -89,7 +89,7 @@ public class AvaliacaoFisicaControllerWeb {
 		try {
 			avaliacaoFisicaService.update(id, avaliacao);
 			attr.addFlashAttribute("success", "Matricula atualizado com sucesso!");
-			return "redirect:/web/avaliacaoFisica";
+			return "redirect:web/avaliacaoFisica";
 		} catch (Exception e) {
 			attr.addFlashAttribute("fail", "Erro: Violação de chave.");
 			return "redirect:/web/avaliacaoFisica/";

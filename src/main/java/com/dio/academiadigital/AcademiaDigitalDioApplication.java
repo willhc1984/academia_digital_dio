@@ -1,6 +1,5 @@
 package com.dio.academiadigital;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -16,10 +15,6 @@ import com.dio.academiadigital.entities.Matricula;
 import com.dio.academiadigital.repositories.AlunoRepository;
 import com.dio.academiadigital.repositories.AvaliacaoFisicaRepository;
 import com.dio.academiadigital.repositories.MatriculaRepository;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @SpringBootApplication
 public class AcademiaDigitalDioApplication implements CommandLineRunner{
@@ -42,19 +37,33 @@ public class AcademiaDigitalDioApplication implements CommandLineRunner{
 		
 		Aluno aluno1 = new Aluno();
 		aluno1.setId(1L);
-		aluno1.setNome("William Henrique");
-		aluno1.setCpf("34536456789");
-		aluno1.setDataDeNascimento(LocalDate.now());
+		aluno1.setNome("Maria Maromba");
+		aluno1.setCpf("33225487598");
+		aluno1.setDataDeNascimento(LocalDate.of(1999, 6, 7));
 		aluno1.setBairro("Vila dos Ingleses");
 		
 		Aluno aluno2 = new Aluno();
 		aluno2.setId(2L);
-		aluno2.setNome("Camila Rezende");
-		aluno2.setCpf("34265476892");
-		aluno2.setDataDeNascimento(LocalDate.now());
+		aluno2.setNome("João da Bomba");
+		aluno2.setCpf("14785632547");
+		aluno2.setDataDeNascimento(LocalDate.of(1998, 8, 12));
 		aluno2.setBairro("Vila Carol");
 		
-		alunoRepository.saveAll(Arrays.asList(aluno1, aluno2));
+		Aluno aluno3 = new Aluno();
+		aluno3.setId(3L);
+		aluno3.setNome("Felipe Frango");
+		aluno3.setCpf("33654125896");
+		aluno3.setDataDeNascimento(LocalDate.of(2002, 9, 15));
+		aluno3.setBairro("Vila Jardini");
+		
+		Aluno aluno4 = new Aluno();
+		aluno4.setId(4L);
+		aluno4.setNome("Graciane Barbosa");
+		aluno4.setCpf("32587456932");
+		aluno4.setDataDeNascimento(LocalDate.of(1996, 12, 15));
+		aluno4.setBairro("Mineirão");
+		
+		alunoRepository.saveAll(Arrays.asList(aluno1, aluno2, aluno3, aluno4));
 		
 		Matricula matricula1 = new Matricula();
 		matricula1.setId(1L);

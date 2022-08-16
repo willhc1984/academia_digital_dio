@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="https://www.thymeleaf.org"
-	xmlns="http://www.w3.org/1999/xhtml"
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
-<title>Desafio DIO - Academia Digital</title>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<link rel="icon" href="/image/favicon.png" />
+	<title>Desafio DIO - Academia Digital</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link rel="icon" href="/image/favicon.png" />
 
-<!-- Bootstrap core CSS -->
-<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
-	rel="stylesheet" />
+	<!-- Bootstrap core CSS -->
+	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
 
 </head>
 
@@ -25,9 +22,9 @@
 	<header th:replace="header :: cabecalho">
 		<div>Header</div>
 	</header>
-	
+
 	<div class="container" style="padding: 50px">
-		
+
 		<h2>Alunos cadastrados no sistema:</h2>
 		<div th:replace="alert"></div>
 
@@ -49,16 +46,15 @@
 					<td th:text="${a.cpf}"></td>
 					<td th:text="${a.bairro}"></td>
 					<td th:text="${a.dataDeNascimento}"></td>
-					<td><a class="btn btn-info btn-sm" th:href="@{/web/alunos/update/{id} (id=${a.id}) }" role="button"><span
-							class="oi oi-brush" title="Editar" aria-hidden="true"></span></a> <a
-						class="btn btn-info btn-sm" href="" role="button"><span
-							class="oi oi-magnifying-glass" title="Visualizar"
-							aria-hidden="true"></span></a>
-						<button th:id="${#strings.concat('btn_web/alunos/delete/', a.id) }"
-							type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-							data-target="#myModal">
+					<td>
+						<a class="btn btn-info btn-sm" th:href="@{/web/alunos/update/{id} (id=${a.id}) }"
+							role="button"><span class="oi oi-brush" title="Editar" aria-hidden="true"></span></a>
+
+						<button th:id="${#strings.concat('btn_web/alunos/delete/', a.id) }" type="button"
+							class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
 							<span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
 						</button>
+					</td>
 				</tr>
 
 			</tbody>
@@ -77,22 +73,21 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
-		
+
 		var url = '';
 
-		$('button[id*="btn_"]').click(function() {
+		$('button[id*="btn_"]').click(function () {
 			url = "http://localhost:8080/" + $(this).attr('id').split("_")[1];
 		});
 
-		$('#ok_confirm').click(function() {
+		$('#ok_confirm').click(function () {
 			document.location.href = url;
 		});
-		
+
 	</script>
 
 </body>

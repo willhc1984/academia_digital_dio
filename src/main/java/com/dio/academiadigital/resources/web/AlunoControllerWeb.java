@@ -27,18 +27,18 @@ public class AlunoControllerWeb {
 	@GetMapping
 	public String getAll(ModelMap model) {
 		model.addAttribute("alunos", service.getAll());
-		return "/lista-aluno";
+		return "lista-aluno";
 	}
 
 	@GetMapping(value = "/cadastro")
 	public String save(AlunoForm alunoForm) {
-		return "/cad-aluno";
+		return "cad-aluno";
 	}
 
 	@PostMapping
 	public String create(@Valid AlunoForm form, BindingResult result, RedirectAttributes attr) {
 		if (result.hasErrors()) { 
-			return "/cad-aluno"; 
+			return "cad-aluno"; 
 		}		 
 		try {
 			service.create(form);
@@ -66,14 +66,14 @@ public class AlunoControllerWeb {
 	@GetMapping(value = "/update/{id}")
 	public String update(@PathVariable Long id, ModelMap model) {
 		model.addAttribute("alunoForm", service.getById(id)); 
-		return "/atualizar-aluno";
+		return "atualizar-aluno";
 	}
 	
 	@PostMapping(value = "/update/{id}")
 	public String update(@Valid AlunoForm alunoForm, BindingResult result, @PathVariable Long id, Aluno aluno, RedirectAttributes attr, ModelMap model) {
 		
 		if (result.hasErrors()) { 
-			return "/atualizar-aluno"; 
+			return "atualizar-aluno"; 
 		}
 		
 		try {
