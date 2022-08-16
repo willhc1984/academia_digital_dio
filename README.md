@@ -9,6 +9,11 @@ Academia Digital é um projeto/desafio proposto pela instrutora Camila Cavalcant
 ## Diagrama ER
 ![Mobile 1](academia-digital.png)
 
+## Executando o projeto
+- git clone https://github.com/willhc1984/academia_digital_dio
+- docker build -t spring-app .
+- docker run -p 8080:8080 spring-app
+
 # Tecnologias utilizadas
 ## Back end
 - Java 17
