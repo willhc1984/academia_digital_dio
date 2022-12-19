@@ -4,7 +4,7 @@
 # Sobre o projeto
 
 Academia Digital é um projeto/desafio proposto pela instrutora Camila Cavalcante no bootcamp Spring Framework Experience - plataforma Digital Innovation One. 
-É uma API REST desenvolvida com SpringFramework + Thymeleaf para renderização das paginas com Bootstrap. (Não está concluido).
+É uma API REST desenvolvida com SpringFramework + Thymeleaf para renderização das paginas com Bootstrap.
 
 ## Diagrama ER
 ![Mobile 1](academia-digital.png)
